@@ -1,0 +1,16 @@
+curl -x 70.88.182.181:80 http://www.icd9data.com/
+curl -x 23.248.163.235:80 http://www.icd9data.com/ 2>NUL
+
+perl scraper.pl -x 192.241.225.201:80 -c "001-139" -m 5 -o data/001-139.txt
+perl scraper.pl -x 192.241.225.201:80 -c "001-139" -o data/001-139.txt
+perl scraper_start.pl
+perl proxtest.pl
+
+grep -rn "0:00:01" *
+
+=INDEX(Crosswalk.xlsx!F$2:F$17508,MATCH($A2,Crosswalk.xlsx!$A$2:$A$17508,0))
+
+=INDEX([crosswalk2.xlsx]crosswalk!F$2:F$16091,MATCH($A14735,[crosswalk2.xlsx]crosswalk!$A$2:$A$16091,0))
+
+
+017.66
